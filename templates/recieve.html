@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Beautiful Web Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <hr>
+        <h1 class="title">AayQuick</h1> 
+        
+      
+        <hr>
+
+    </header>
+	<main>
+        <form class="form_neumorphism" action='/recieve' method="POST" style="padding: 2cm; text-align:center;">
+
+           HASH:  <input type="text" name='hash' class="nuemorphism" style="font-size: x-large; border-width:2px; border-radius: 10px;"><br><br>
+           {% if message %}
+                <p> {{message}}</p>
+           {% endif %}
+            <button onclick="submit" class="neumorphism" style="font-size:x-large">Recieve</button>
+        </form>  
+    </main>
+    <footer class="bottom-navigation">
+        <a href="/home"> <button class="nav-btn home">Home</button></a>
+            <button class="nav-btn downloads">Downloads</button>
+            <button class="nav-btn contact">Contact</button>
+    </footer>
+</body>
+</html>

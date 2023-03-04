@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Beautiful Web Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <hr>
+        <h1 class="title">AayQuick</h1> 
+        
+      
+        <hr>
+
+    </header>
+	<main>
+        <div class="form_neumorphism" style="padding: 2cm; text-align:center;">
+            <button id="text-to-copy" class="neumorphism" style="font-size:x-large">{{message}}</button>
+            <button onclick="copyText()" class="neumorphism" style="font-size:large;">Copy Text</button>
+
+        </form>  
+    </main>
+    <footer class="bottom-navigation">
+        <a href="/home"> <button class="nav-btn home">Home</button></a>
+            <button class="nav-btn downloads">Downloads</button>
+            <button class="nav-btn contact">Contact</button>
+    </footer>
+
+  <script>
+    function copyText() {
+      // Get the text to copy
+      var text = document.getElementById("text-to-copy").innerText;
+
+      // Create a temporary textarea to hold the text
+      var textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+
+      // Select the text and copy it to the clipboard
+      textarea.select();
+      document.execCommand("copy");
+
+      // Remove the temporary textarea
+      document.body.removeChild(textarea);
+
+      // Alert the user that the text has been copied
+      alert("Text has been copied to clipboard.");
+    }
+  </script>
+</body>
+</html>
